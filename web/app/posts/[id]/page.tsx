@@ -4,7 +4,7 @@ import { generateLink } from "@/lib/generateLink"
 import PostComponent from "@/Components/post/PostComponent"
 import RecommendedPosts from "@/Components/RecommendedPosts"
 
-export async function getPost(id: number) {
+async function getPost(id: number) {
   try {
     const res = await fetch("http://16.171.225.57:8080/posts/" + id, {
       cache: "no-store",

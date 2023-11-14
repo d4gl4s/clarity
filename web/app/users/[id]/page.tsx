@@ -4,7 +4,7 @@ import { generateLink } from "@/lib/generateLink"
 import PostComponent from "@/Components/post/PostComponent"
 import UserComponent from "@/Components/user/UserComponent"
 
-export async function getUserInfo(id: number) {
+async function getUserInfo(id: number) {
   try {
     const res = await fetch("http://16.171.225.57:8080/users/" + id, {
       cache: "no-store",
