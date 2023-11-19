@@ -31,7 +31,6 @@ const PostComponent = ({ postData }: Post) => {
   }, [postData])
   const referencesRef = useRef<HTMLDivElement>(null)
 
-  console.log(post?.contentBlocks)
   return (
     <div>
       {loading ? (
@@ -58,14 +57,12 @@ const PostComponent = ({ postData }: Post) => {
                 [{block.refNumber}]{" "}
               </div>
             ) : block.type == "lineBreak" ? (
-              <div className="h-8"></div>
+              <div className="h-8" key={i}></div>
             ) : (
-              <>
+              <a className="underline text-indigo-400 inline-block" href={block.ref} key={i}>
                 {" "}
-                <a className="underline text-indigo-400 inline-block" href={block.ref}>
-                  {block.body}
-                </a>{" "}
-              </>
+                {block.body}
+              </a>
             )
           )}
 
@@ -92,6 +89,7 @@ const PostComponent = ({ postData }: Post) => {
               )}
             </ol>
           </section>
+
           <section className="flex mt-20 text-[0.85em] flex-wrap">
             {post?.topics.map((topic: string, i: number) => (
               <div className="px-7 py-2 bg-[#f1eff4] mr-3 mb-3 text-[#837f9e] rounded-[50px] flex items-center" key={i}>
