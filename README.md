@@ -1,6 +1,6 @@
 # Simple Blog Post Application ✍️
 
-This is a simple blog post application built using Java Spring Boot for the backend, PostgreSQL for the database, and React for the frontend. All the application does is retrieve blog posts from database. One unique feature of this application is that each blog post is composed of components such as links, headings, paragraphs, and references, which are dynamically rendered in order based on the content stored in the database. This allows for easy reordering of blog post layouts and provides flexibility in styling and functionality for different components.
+This is a simple hobby blog post application built using Java Spring Boot for the backend, PostgreSQL for the database, and React for the frontend. All the application does is retrieve blog posts from database. One unique feature of this application is that each blog post is composed of components such as links, headings, paragraphs, and references, which are dynamically rendered in order based on the content stored in the database. This allows for easy reordering of blog post layouts and provides flexibility in styling and functionality for different components.
 
 The main aim of this project was to try out hosting on AWS and working with component-based objects where order is important in MVC systems. The application is hosted using the AWS free tier.
 
