@@ -45,8 +45,8 @@ const HomeComponent = ({ postList }: Component) => {
               <PostCard key={i} post={post} gridColSpan={i % 3 == 0 && i != 0} />
               <PostCard key={i + 1} post={post} gridColSpan={i % 3 == 0 && i != 0} />
               <PostCard key={i + 2} post={post} gridColSpan={i % 3 == 0 && i != 0} />
-              <PostCard key={i} post={post} gridColSpan={i % 3 == 0 && i != 0} />
-              <PostCard key={i + 1} post={post} gridColSpan={i % 3 == 0 && i != 0} />
+              <PostCard key={i + 3} post={post} gridColSpan={i % 3 == 0 && i != 0} />
+              <PostCard key={i + 4} post={post} gridColSpan={i % 3 == 0 && i != 0} />
             </>
           ))}
         </section>
