@@ -3,10 +3,6 @@
 import { contentBlock, postType, userType } from "@/types/types"
 import { playfair } from "@/app/fonts"
 import { useEffect, useState, useRef } from "react"
-import RecommendedPosts from "../RecommendedPosts"
-import Link from "next/link"
-import ProfilePicture from "../user/ProfilePicture"
-import { FaTwitter, FaFacebookF, FaRegCopy } from "react-icons/fa"
 
 interface Post {
   postData:
@@ -59,10 +55,13 @@ const PostComponent = ({ postData }: Post) => {
             ) : block.type == "lineBreak" ? (
               <div className="h-8" key={i}></div>
             ) : (
-              <a className="underline text-indigo-400 inline-block" href={block.ref} key={i}>
-                {" "}
-                {block.body}
-              </a>
+              <>
+                <span> </span>
+                <a className="underline text-indigo-400 inline-block" href={block.ref} key={i}>
+                  {block.body}
+                </a>
+                <span> </span>
+              </>
             )
           )}
 
@@ -102,32 +101,13 @@ const PostComponent = ({ postData }: Post) => {
             <section className="mb-20 w-fit mr-48">
               <h2 className="mb-7 text-[1.7em] font-bold">Written By</h2>
               {post?.authors.map((author: userType, i: number) => (
-                /* <Link href={"../users/" + author.userId} key={i} className="font-semibold flex items-center mb-2">
-                  <ProfilePicture src="/profile.jpeg" size={30} />
-                  <span className="ml-2">{author.firstName + " " + author.lastName}</span> <br></br>
-                </Link> */
-                <div key={i} className="font-semibold flex items-center mb-2">
-                  <ProfilePicture src="/profile.jpeg" size={30} />
-                  <span className="ml-2">{author.firstName + " " + author.lastName}</span> <br></br>
+                <div key={i} className="font-semibold flex items-center mb-2 text-[1.2em] ">
+                  <span>✍️ {author.firstName + " " + author.lastName}</span> <br></br>
                 </div>
               ))}
 
-              <p className="mt-6 text-slate-400">{post?.dateCreated}</p>
+              <p className="mt-6 text-emerald-400 font-semibold text-[1.4em]">{post?.dateCreated}</p>
             </section>
-            {/* <section className="w-fit">
-              <h2 className="mb-6 text-[1.7em] font-bold">Share</h2>
-              <div className="flex">
-                <div className="hover:bg-indigo-500 bg-slate-800 h-[3em] w-[3em] rounded-[50px] flex items-center justify-center cursor-pointer">
-                  <FaFacebookF className="text-white" />
-                </div>
-                <div className="hover:bg-indigo-500 bg-slate-800 h-[3em] w-[3em] rounded-[50px] flex items-center justify-center ml-3  cursor-pointer">
-                  <FaTwitter className="text-white" />
-                </div>
-                <div className="hover:bg-indigo-500 bg-slate-800 h-[3em] w-[3em] rounded-[50px] flex items-center justify-center ml-3  cursor-pointer">
-                  <FaRegCopy className="text-white" />
-                </div>
-              </div>
-            </section> */}
           </section>
         </article>
       )}
