@@ -49,10 +49,6 @@ public class Application {
 			Block heading2 = new Block("Enhancing Education", 8L, BlockType.OPTION1);
 			Block text5 = new Block("AI is also transforming the field of education. Personalized learning platforms use AI algorithms to adapt to each student's individual pace and learning style. This approach helps students grasp concepts more effectively and provides teachers with valuable insights into their students' progress. Additionally, AI-driven chatbots are increasingly used to assist students with questions, homework, and even career guidance, making education more accessible and interactive.", 9L, BlockType.OPTION2);
 
-
-
-
-
 			List<Block> content = new ArrayList<>();
 			content.add(text1);
 			content.add(text2);
@@ -74,7 +70,6 @@ public class Application {
 			topics.add("Tutorial");
 
 			Post post1 = new Post("The Impact of Artificial Intelligence on Everyday Life", "Discover how Artificial Intelligence (AI) is reshaping our daily lives, from healthcare advancements to educational enhancements.", content, authors, topics, "Technology");
-
 
 			postRepository.save(post1);
 		};
